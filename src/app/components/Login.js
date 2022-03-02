@@ -70,7 +70,7 @@ const Login = () => {
         <Dialog open={appConfig.showLogin} fullWidth={true} maxWidth={"sm"}>
             <Paper>
                 <Card>
-                    <CardHeader title="Login with Macrometa account" />
+                    <CardHeader title="Login with Cox Edge account" />
                     <CardContent sx={{ display: "flex", flexDirection: "column" }}>
                         <Divider />
                         <FormControl sx={{ m: 3, mb: 1 }} variant="outlined">
