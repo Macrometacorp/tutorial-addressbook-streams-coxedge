@@ -33,7 +33,7 @@ const AddressBookTable = () => {
     const { setContact } = useContact()
     const { setAlert } = useSnackbarAlert()
     const {
-        appConfig: { isAppReady, selectedRegion, showLogin, showSelectDataCenter },
+        appConfig: { isAppReady, selectedRegion, showSelectDataCenter },
         setAppConfig,
     } = useApp()
 
@@ -189,10 +189,10 @@ const AddressBookTable = () => {
             await establishStreamProducerConnection(ADDRESS_COLLECTION_NAME)
         }
 
-        if (isAppReady && selectedRegion && !showLogin && !showSelectDataCenter) {
+        if (isAppReady && selectedRegion && !showSelectDataCenter) {
             init()
         }
-    }, [isAppReady, selectedRegion, showLogin, showSelectDataCenter])
+    }, [isAppReady, selectedRegion, showSelectDataCenter])
 
     useEffect(() => {}, [triggerUseEffect])
     return (

@@ -19,7 +19,7 @@ import { generateDcList } from "../../util/helperFunctions"
 import useApp from "../../hooks/useApp"
 
 const SelectRegion = () => {
-    const { jsc8Config, setJsc8Config, appConfig, setAppConfig } = useApp()
+    const { setJsc8Config, appConfig, setAppConfig } = useApp()
     const [dataCenter, setDataCenter] = useState(JSON.stringify(appConfig.dataCenters[0]))
 
     const updateAppConfig = useCallback(
@@ -42,7 +42,7 @@ const SelectRegion = () => {
                 gdnUrl: _dc.url,
             }
         })
-        await reInitClient(_dc.url, jsc8Config.bearerToken)
+        await reInitClient(_dc.url)
         updateAppConfig("selectedRegion", _dc.location)
         updateAppConfig("showSelectDataCenter", false)
     }

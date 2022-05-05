@@ -5,7 +5,6 @@ import ButtonBar from "./common/ButtonBar"
 import AddressBookTable from "./AddressBookTable"
 import Header from "./common/Header"
 import Footer from "./common/Footer"
-import Login from "./Login"
 import SelectRegion from "./SelectRegion"
 import AddUpdateContact from "./AddUpdateContact"
 import { ContactContextProvider, SnackbarAlertContextProvider } from "../context"
@@ -27,7 +26,6 @@ const Dashboard = () => {
             <Header />
             <ButtonBar />
             <SnackbarAlertContextProvider>
-                <Login />
                 <ContactContextProvider>
                     <AddUpdateContact />
                     <AddressBookTable />

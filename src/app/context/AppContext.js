@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react"
-import { GDN_URL, DEFAULT_USERNAME, DEFAULT_REGION, ADDRESS_COLLECTION_NAME } from "../../util/constants"
+import { GDN_URL, DEFAULT_REGION, ADDRESS_COLLECTION_NAME } from "../../util/constants"
 import { sleep } from "../../util/helperFunctions"
 import * as CollectionService from "../services/collectionService"
 import { reInitClient } from "../services/jsc8Instance"
@@ -9,15 +9,12 @@ export const AppContext = createContext()
 export const AppContextProvider = ({ children }) => {
     const [jsc8Config, setJsc8Config] = useState({
         gdnUrl: GDN_URL,
-        username: DEFAULT_USERNAME,
-        password: "",
-        bearerToken: "",
     })
+
     const [appConfig, setAppConfig] = useState({
         selectedRegion: DEFAULT_REGION,
         dataCenters: [{ url: GDN_URL, location: DEFAULT_REGION }],
-        showLogin: true,
-        showSelectDataCenter: false,
+        showSelectDataCenter: true,
         addUpdateContact: false,
         isAppReady: false,
     })
@@ -31,7 +28,7 @@ export const AppContextProvider = ({ children }) => {
                     await sleep(2000)
                 } else {
                     const responsePromises = appConfig.dataCenters.map(async (dc) => {
-                        reInitClient(dc.url, jsc8Config.bearerToken)
+                        reInitClient(dc.url)
                         return await CollectionService.getCollection(ADDRESS_COLLECTION_NAME)
                     })
                     const addressesCollections = await Promise.all(responsePromises)
@@ -69,7 +66,7 @@ export const AppContextProvider = ({ children }) => {
         if (appConfig.dataCenters.length > 1) {
             isAppReady()
         }
-    }, [jsc8Config.bearerToken, appConfig.dataCenters])
+    }, [appConfig.dataCenters])
 
     return (
         <AppContext.Provider

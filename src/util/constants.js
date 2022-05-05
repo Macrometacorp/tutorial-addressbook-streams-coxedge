@@ -1,7 +1,8 @@
 const GDN_URL = process.env.REACT_APP_GDN_URL
+const FABRIC_NAME = process.env.FABRIC_NAME
+const API_KEY = process.env.MACROMETA_API_KEY
 const GITHUB_URL = process.env.REACT_APP_GITHUB_URL
 const DEMO_HEADING = "Address Book"
-const DEFAULT_USERNAME = "demo@macrometa.io"
 const DEFAULT_REGION = "Global"
 const ADDRESS_COLLECTION_NAME = "addresses"
 const DOCUMENT_OPERATIONS = {
@@ -25,10 +26,11 @@ export {
     ADDRESS_COLLECTION_NAME,
     DOCUMENT_OPERATIONS,
     DEMO_HEADING,
-    DEFAULT_USERNAME,
     DEFAULT_REGION,
     EMAIL_VALIDATION_REGEX,
     GITHUB_URL,
     GDN_URL,
+    FABRIC_NAME,
+    API_KEY,
     RESTQL,
 }

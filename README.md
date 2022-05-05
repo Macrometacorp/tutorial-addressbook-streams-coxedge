@@ -18,27 +18,34 @@ Demo to show a Real-time adrress book!
 
 ### Macrometa Account setup
 
-1. Create the following collections with stream in your Macrometa account:
+1. Create the following collections with stream in your Macrometa account.
 
 ```
 addresses(global)
 ```
 
-2. On the development machine, run the following commands in a console:
-
+2. Deploy locally. 
+ 
+First, clone the repository and `cd` to your new directory.
 ```
-1. git clone git@github.com:Macrometacorp/tutorial-addressbook-streams.git
-2. cd tutorial-addressbook-streams
-3. git fetch
-4. npm install
-5. npm run start
+git clone git@github.com:Macrometacorp/tutorial-addressbook-streams.git
+```
+```
+cd tutorial-addressbook-streams
 ```
 
-3. Once you have the app running, you will be presented with a page to log in with your Macrometa account. Add your Macrometa account email and password.
+Then, install the project's dependencies.
+```
+npm install
+```
+Finally, run it locally.
+```
+npm run start
+```
 
-4. The GDN url has to be provided in `src/util/constants.js` file. The user will then be asked to select one region in the GUI.
+3. The GDN url and API key have to be provided in `src/util/constants.js` file. The user will then be asked to select one region in the GUI.
 
-5. Deploy on GH Pages:
+4. Deploy on GH Pages:
 
 ```
 npm run deploy
