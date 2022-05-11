@@ -1,7 +1,7 @@
 import { Button, Grid, Typography } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import React from "react"
-import MacrometaLogo from "../../../images/logo.png"
+import CoxEdgeLogo from "../../../images/logo.png"
 import { DEMO_HEADING, GITHUB_URL } from "../../../util/constants"
 
 const useStyles = makeStyles({
@@ -51,7 +51,7 @@ const Header = () => {
             wrap="nowrap"
         >
             <Grid container justifyContent="flex-start" alignItems="center" wrap="nowrap">
-                <img alt="Macrometa" className={classes.logo} src={MacrometaLogo} />
+                <img alt="Macrometa" className={classes.logo} src={CoxEdgeLogo} />
                 <Typography variant="subtitle1" className={classes.heading}>
                     {DEMO_HEADING}
                 </Typography>
