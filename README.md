@@ -1,52 +1,59 @@
-# Global Address Book
+# Address Book
 
-### Live Demo: https://macrometacorp.github.io/tutorial-addressbook-streams-coxedge/
+[:link: Here](https://t6r8d2q9.stackpathcdn.com) is the link for the live demo!
 
-Demo to show a Real-time adrress book!
+## Run it Locally
 
-## Setup
+### Prerequisites
 
-| **Federation**                                        | **Email**          | **Passsword** |
-| ----------------------------------------------------- | ------------------ | ------------- |
-| [Global Data Network](https://gdn.paas.macrometa.io/) | demo@macrometa.com | `xxxxxxxx`    |
+Make sure you have the `address` document collection created in Edge Database/Collections and an API key with the corresponding permissions.
 
-## Overview
-
-**Dashboard:**
-
-![dashboard.png](dashboard.png)
-
-### Macrometa Account setup
-
-1. Create the following collections with stream in your Macrometa account.
+You will have to create a `.env.development.local` file in `/demos/address-book` directory to store your environment variables. This file must have the following env. variables:
 
 ```
-addresses(global)
+REACT_APP_GDN_URL = "https://{GDN_URL}"
+REACT_APP_FABRIC_NAME = "{FABRIC_NAME}"
+REACT_APP_MACROMETA_API_KEY = "{API_KEY}"
+
 ```
 
-2. Deploy locally. 
- 
-First, clone the repository and `cd` to your new directory.
+### Steps
+
+First, clone the repository and `cd` to the Address Book demo directory.
+
 ```
-git clone git@github.com:Macrometacorp/tutorial-addressbook-streams.git
-```
-```
-cd tutorial-addressbook-streams
+git clone git@github.com:CoxEdge-Tools/demos.git
 ```
 
-Then, install the project's dependencies.
+```
+cd demos/address-book
+```
+
+Then, install the project's dependencies with
+
 ```
 npm install
 ```
-Finally, run it locally.
+
+and finally, run
+
 ```
 npm run start
 ```
 
-3. The GDN url and API key have to be provided in `src/util/constants.js` file. The user will then be asked to select one region in the GUI.
+## Build it for Production
 
-4. Deploy on GH Pages:
+First, you will have to create `.env.production.local` file to store your env. variables. This file must have the following env. variables:
 
 ```
-npm run deploy
+REACT_APP_GDN_URL = "https://coxedge.macrometa.io"
+REACT_APP_FABRIC_NAME = "db-demo-for-macrometa"
+REACT_APP_MACROMETA_API_KEY = "{API_KEY}"
+
+```
+
+Then, run the command below to generate your `build` directory. You will then host this `build` directory in your server machine.
+
+```
+npm run build
 ```
