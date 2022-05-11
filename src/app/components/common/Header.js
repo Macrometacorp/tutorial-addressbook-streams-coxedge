@@ -56,7 +56,7 @@ const Header = () => {
                     {DEMO_HEADING}
                 </Typography>
             </Grid>
-            <Grid container justifyContent="flex-end" alignItems="center" wrap="nowrap">
+            {/* <Grid container justifyContent="flex-end" alignItems="center" wrap="nowrap">
                 <Button
                     className={classes.aboutButton}
                     onClick={() => {
@@ -66,7 +66,7 @@ const Header = () => {
                 >
                     Source on GitHub
                 </Button>
-            </Grid>
+            </Grid> */}
         </Grid>
     )
 }
